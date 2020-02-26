@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+  const [categories, setCategories] = useState([
+    {
+      name: 'emails'
+    },
+    {
+      name: 'séries'
+    },
+    {
+      name: 'moteur de recherche'
+    }
+  ]);
+  const [selectedCategory, setSelectedCategory] = useState();
+  const [categoryLevel, setCategoryLevel] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <span>les catégories</span>
+        <ul>
+          {categories.map((category, index) => (
+              <li key={index} onClick={() => setSelectedCategory(category)}>{category.name}</li>
+          ))}
+        </ul>
+        <span>catégorie selectionnée : {selectedCategory ? selectedCategory.name : ""}</span>
+      </div>
   );
 }
 
