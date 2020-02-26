@@ -52,3 +52,12 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 }
+.page-title {
+  text-align: center;
+}
+.page-subtitle {
+  text-align: left;
+}
+.category-title {
+  text-align: center;
+}
