@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import categories from "data/categories.json";
+import categories from "./data/categories.json";
+import Navigation from "./components/Navigation";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(0);
@@ -10,6 +11,15 @@ function App() {
 
   return (
       <div>
+          {currentPage === 0 &&
+          }
+          {currentPage === 1 &&
+          }
+          {currentPage === 2 &&
+          }
+          <Navigation
+            setCurrentPage={setCurrentPage}
+          />
       </div>
   );
 }
