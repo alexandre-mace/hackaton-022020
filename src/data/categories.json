@@ -1,0 +1,89 @@
+[
+  {
+    "title": "Catégorie 1",
+    "goals": [
+      {
+        "title": "Titre objectif A",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      },
+      {
+        "title": "Titre objectif B",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      },
+      {
+        "title": "Titre objectif C",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      }
+    ]
+  },
+  {
+    "title": "Catégorie 2",
+    "goals": [
+      {
+        "title": "Titre objectif A",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      },
+      {
+        "title": "Titre objectif B",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      },
+      {
+        "title": "Titre objectif C",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      }
+    ]
+  },
+  {
+    "title": "Catégorie 3",
+    "goals": [
+      {
+        "title": "Titre objectif A",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      },
+      {
+        "title": "Titre objectif B",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      },
+      {
+        "title": "Titre objectif C",
+        "taken": false,
+        "achieved": false,
+        "image": "superimage.jpg",
+        "duration": 5,
+        "info": "Blabla"
+      }
+    ]
+  }
+]
