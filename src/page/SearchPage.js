@@ -5,7 +5,6 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 
 const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption, search, setSearch }) => {
-    console.log(firstOption);
 
     return (
         <div className={"container"}>
@@ -16,7 +15,6 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                             className={"search-input"}
                             options={data}
                             getOptionLabel={option => option.title}
-                            getOptionSelected
                             onInputChange={(event, value) => {
                                 console.log(data.filter((singleData) => (singleData.title === value))[0])
                                 setFirstOption(data.filter((singleData) => (singleData.title === value))[0]);
@@ -48,12 +46,21 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                         </div>
                     </div>
                     {search &&
-                    <div className={"d-flex justify-content-center"}>
+                    <div className={"mt-3"}>
                         <div>
-                            {firstOption.pollutionScore}
+                            {
+                                firstOption.pollutionScore > secondOption.pollutionScore
+                                ? secondOption.title
+                                : firstOption.title
+                            } est le moins pire
                         </div>
-                        <div>
-                            {secondOption.pollutionScore}
+                        <div className={"d-flex justify-content-center"}>
+                            <div>
+                                {firstOption.pollutionScore}
+                            </div> vs
+                            <div>
+                                {secondOption.pollutionScore}
+                            </div>
                         </div>
                     </div>
                     }

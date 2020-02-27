@@ -1,7 +1,7 @@
 [
   {
     "title": "Envoyer un mail",
-    "pollutionScore": 4,
+    "pollutionScore": 10,
     "alternatives": [
         "Discord",
         "Slack"
@@ -9,7 +9,7 @@
   },
   {
     "title": "Envoyer un message via Discord",
-    "pollutionScore": 4,
+    "pollutionScore": 5,
     "alternatives": [
       "Discord",
       "Slack"

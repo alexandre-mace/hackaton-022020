@@ -7,10 +7,10 @@ const Navigation = ({ setCurrentPage }) => {
                 home
             </div>
             <div onClick={() => setCurrentPage(1)}>
-                list
+                leaderboard
             </div>
             <div onClick={() => setCurrentPage(2)}>
-                friends
+                game
             </div>
         </div>
     )
