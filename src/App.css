@@ -11,27 +11,49 @@
   justify-content: center;
 }
 .search-wrapper {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100vw;
- display: flex;
+  display: flex;
   flex-direction: column;
+  height: 100%;
+  padding-top: 50px;
+}
+.app-container {
+  padding: 20px;
+  padding-top: 100px;
+  height: 100vh;
 }
 .mb-3 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .mt-3 {
-  margin-top: 30px;
+  margin-top: 20px;
+}
+.mt-auto {
+  margin-top: auto;
 }
 .search-input {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: auto;
 }
-.bottom-navigation {
+.search-input-wrapper {
   position: absolute;
   bottom: 0;
+  left: 0;
+  height: 60vh;
+  width: 100vw;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: white;
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+.flex-column {
+  flex-direction: column;
+}
+.text-center {
+  text-align: center;
+}
+.top-navigation {
+  position: absolute;
+  top: 0;
   width: 100%;
   left: 0;
   display: flex;
@@ -51,7 +73,7 @@
 .page-title {
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 .page-subtitle {
   text-align: left;
@@ -116,12 +138,54 @@
   height: 15px;
   width: 0px;
 }
-.mt-3 {
-  margin-top: 20px;
+.select-button {
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  height: 80px;
+  border-radius: 8px;
 }
 .goal-card-title {
   margin-bottom: 10px;
 }
 .goal-card-description {
   margin-bottom: 10px;
+}
+
+.bar-outside {
+  height: 150px;
+  width: 60px;
+  position: relative;
+}
+.bar-inside {
+  height: 2px;
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+
+  /* Set our transitions up. */
+  -webkit-transition: height 500ms ease;
+  -moz-transition: height 500ms ease;
+  -o-transition: height 500ms ease;
+  transition: height 500ms ease;
+}
+
+.container:hover #bar-green {height: 90%;}
+#bar-green {background-color: #2ecc71;}
+.container:hover #bar-red {height: 100%;}
+#bar-red {background-color: #e74c3c;}
+
+.percent {
+  color: #fff;
+  text-align: center;
+
+  /* Set our transitions up. */
+  -webkit-transition: color 500ms ease;
+  -moz-transition: color 500ms ease;
+  -o-transition: color 500ms ease;
+  transition: color 500ms ease;
 }
