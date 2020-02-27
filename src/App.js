@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import './App.css';
-import categoriesData from "./data/data.json";
+import data from "./data/data.json";
 import Navigation from "./components/Navigation";
 import SearchPage from "./page/SearchPage";
+import LeaderBoard from './page/LeaderBoard';
+import Challenge from './page/Challenge'
+
 
 function App() {
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(2);
     const [firstOption, setFirstOption] = useState(null);
     const [firstOptionSelection, setFirstOptionSelection] = useState(false);
     const [secondOptionSelection, setSecondOptionSelection] = useState(false);
@@ -15,7 +18,7 @@ function App() {
     return (
         <div className={"app-container"}>
             {currentPage === 0 &&
-            <SearchPage
+              <SearchPage
                 setFirstOption={setFirstOption}
                 setSecondOption={setSecondOption}
                 search={search}
@@ -26,7 +29,13 @@ function App() {
                 secondOptionSelection={secondOptionSelection}
                 setFirstOptionSelection={setFirstOptionSelection}
                 setSecondOptionSelection={setSecondOptionSelection}
-            />
+              />
+            }
+            {currentPage === 1 &&
+              <LeaderBoard />
+            }
+            {currentPage === 2 &&
+              <Challenge />
             }
             <Navigation
                 setCurrentPage={setCurrentPage}
