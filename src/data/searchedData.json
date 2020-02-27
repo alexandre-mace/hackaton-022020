@@ -1,0 +1,78 @@
+[
+  {
+    "firstAction": {
+      "title": "Envoyer un mail",
+      "pollutionScore": 10,
+      "alternatives": [
+          "Discord",
+          "Slack"
+      ]
+    },
+    "secondAction": {
+      "title": "Envoyer un message via Discord",
+      "pollutionScore": 4,
+      "alternatives": [
+        "Discord",
+        "Slack"
+      ]
+    },
+    "timeSearched": 5
+  },
+  {
+    "firstAction": {
+      "title": "Envoyer un mail",
+      "pollutionScore": 4,
+      "alternatives": [
+          "Discord",
+          "Slack"
+      ]
+    },
+    "secondAction": {
+      "title": "Envoyer un message via Discord",
+      "pollutionScore": 4,
+      "alternatives": [
+        "Discord",
+        "Slack"
+      ]
+    },
+    "timeSearched": 10
+  },
+  {
+    "firstAction": {
+      "title": "Envoyer un mail",
+      "pollutionScore": 4,
+      "alternatives": [
+          "Discord",
+          "Slack"
+      ]
+    },
+    "secondAction": {
+      "title": "Envoyer un message via Discord",
+      "pollutionScore": 1,
+      "alternatives": [
+        "Discord",
+        "Slack"
+      ]
+    },
+    "timeSearched": 12
+  },
+  {
+    "firstAction": {
+      "title": "Envoyer un mail",
+      "pollutionScore": 4,
+      "alternatives": [
+          "Discord",
+          "Slack"
+      ]
+    },
+    "secondAction": {
+      "title": "Envoyer un message via Discord",
+      "pollutionScore": 4,
+      "alternatives": [
+        "Discord",
+        "Slack"
+      ]
+    },
+    "timeSearched": 5
+  }
+]
