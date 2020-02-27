@@ -71,16 +71,16 @@
   margin: auto;
 }
 .search-input-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 60vh;
-  width: 100vw;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  /*height: 60vh;*/
+
+  /*width: 100vw;*/
+
   background-color: white;
   border-top: 1px solid black;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
+}
+.MuiBackdrop-root {
+  overflow-y: hidden !important;
 }
 .flex-column {
   flex-direction: column;
