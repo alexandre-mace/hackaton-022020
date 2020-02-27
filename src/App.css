@@ -65,9 +65,12 @@
 }
 .page-title {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 .page-subtitle {
   text-align: left;
+  margin-bottom: 30px;
 }
 .category-title {
   text-align: center;
@@ -81,4 +84,53 @@
 }
 .goals-title {
   text-align: center;
+  margin-top: 20px;
+}
+@keyframes goal-progression-bar {
+  0% {
+    width: 0;
+  }
+}
+@-webkit-keyframes goal-progression-bar {
+  0% {
+    width: 0;
+  }
+}
+@-moz-keyframes goal-progression-bar {
+  0% {
+    width: 0;
+  }
+}
+@-o-keyframes goal-progression-bar {
+  0% {
+    width: 0;
+  }
+}
+
+.goal-progression {
+  margin-top: 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -ms-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+}
+
+.goal-progression-bar {
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -ms-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-animation: goal-progression-bar 1s;
+  -webkit-animation: goal-progression-bar 1s;
+  -ms-animation: goal-progression-bar 1s;
+  animation: goal-progression-bar 1s;
+  background-color: lightgray;
+  display: block;
+  height: 15px;
+  width: 0px;
+}
+.mt-3 {
+  margin-top: 20px;
 }

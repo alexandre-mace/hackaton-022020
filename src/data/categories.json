@@ -28,7 +28,7 @@
       }
     ],
     "image" : "superimage.jpg",
-    "progression" : 3
+    "progression" : 20
   },
   {
     "title": "Catégorie 2",
@@ -59,7 +59,7 @@
       }
     ],
     "image" : "superimage.jpg",
-    "progression" : 3
+    "progression" : 30
   },
   {
     "title": "Catégorie 3",
@@ -90,6 +90,6 @@
       }
     ],
     "image" : "superimage.jpg",
-    "progression" : 3
+    "progression" : 80
   }
 ]

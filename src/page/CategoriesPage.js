@@ -13,9 +13,9 @@ const CategoriesPage = ({ categories, selectedCategory, setSelectedCategory }) =
                     <div className={"page-subtitle"}>Tes objectifs en cours</div>
                     <div className="categories-wrapper">
                         {categories.map((category, index) => (
-                            <div onClick={() => setSelectedCategory(category)} className={"category-title"} key={index}>
-                                <span>{category.title}</span><br/>
-                                <span>{category.progression}</span>
+                            <div onClick={() => setSelectedCategory(category)} key={index}>
+                                <span className={"category-title"}>{category.title}</span><br/>
+                                <div className={"goal-progression"}><span style={{ width: `${category.progression}%`}} className={"goal-progression-bar"}></span></div>
                             </div>
                         ))}
                     </div>
@@ -24,7 +24,7 @@ const CategoriesPage = ({ categories, selectedCategory, setSelectedCategory }) =
             {selectedCategory &&
             <>
                 <div onClick={() => setSelectedCategory(null)}>picto retour</div>
-                <div className={"d-flex"}>
+                <div className={"d-flex mt-3"}>
                     <div>image du thème</div>
                     <div>{selectedCategory.title}</div>
                 </div>
