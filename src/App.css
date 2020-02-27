@@ -6,7 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+* {
+  box-sizing: border-box;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -49,6 +51,9 @@
   left: 0;
   display: flex;
   justify-content: space-between;
+  height: 100px;
+  padding: 20px;
+  align-items: center;
 }
 .container {
   padding: 20px;
