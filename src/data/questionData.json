@@ -1,0 +1,72 @@
+[
+  {
+    "step": 0,
+    "text" : "La super question 1",
+    "answers": [
+      {
+        "text": "La réponse 1",
+        "isTrue": false
+      },
+      {
+        "text": "La réponse 2",
+        "isTrue": true
+      }
+    ]
+  },
+  {
+    "step": 1,
+    "text" : "La super question 2",
+    "answers": [
+      {
+        "text": "La réponse 1",
+        "isTrue": false
+      },
+      {
+        "text": "La réponse 2",
+        "isTrue": true
+      }
+    ]
+  },
+  {
+    "step": 2,
+    "text" : "La super question 3",
+    "answers": [
+      {
+        "text": "La réponse 1",
+        "isTrue": false
+      },
+      {
+        "text": "La réponse 2",
+        "isTrue": true
+      }
+    ]
+  },
+  {
+    "step": 3,
+    "text" : "La super question 4",
+    "answers": [
+      {
+        "text": "La réponse 1",
+        "isTrue": false
+      },
+      {
+        "text": "La réponse 2",
+        "isTrue": true
+      }
+    ]
+  },
+  {
+    "step": 5,
+    "text" : "La super question 4",
+    "answers": [
+      {
+        "text": "La réponse 1",
+        "isTrue": false
+      },
+      {
+        "text": "La réponse 2",
+        "isTrue": true
+      }
+    ]
+  }
+]
