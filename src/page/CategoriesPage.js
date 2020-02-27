@@ -24,19 +24,24 @@ const CategoriesPage = ({ categories, selectedCategory, setSelectedCategory }) =
             {selectedCategory &&
             <>
                 <div onClick={() => setSelectedCategory(null)}>picto retour</div>
-                <div className={""}>
+                <div className={"d-flex"}>
                     <div>image du thème</div>
                     <div>{selectedCategory.title}</div>
                 </div>
                 <hr/>
-                <div>5 bonnes pratiques</div>
+                <div className={"goals-title"}>5 bonnes pratiques</div>
                 {selectedCategory.goals.map((goal, index) => (
-                    <div className={""} key={index}>
-                        <span>photo du goal</span>
-                        <span>{goal.title}</span>
+                    <div className={"goal-card"} key={index}>
+                        <div className={"d-flex"}>
+                            <span>photo du goal</span>
+                            <span>{goal.title}</span>
+                        </div>
                         <div>{goal.description}</div>
-                        <div>
-                            <span>2 amis l'ont fait</span>
+                        <div className={"d-flex justify-content-between"}>
+                            <div className={"d-flex"}>
+                                <span>photo</span>
+                                <span>2 amis l'ont fait</span>
+                            </div>
                             <div>Voir plus</div>
                         </div>
                     </div>

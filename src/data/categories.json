@@ -8,7 +8,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       },
       {
         "title": "Titre objectif B",
@@ -16,7 +16,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       },
       {
         "title": "Titre objectif C",
@@ -24,7 +24,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       }
     ],
     "image" : "superimage.jpg",
@@ -39,7 +39,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       },
       {
         "title": "Titre objectif B",
@@ -47,7 +47,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       },
       {
         "title": "Titre objectif C",
@@ -55,7 +55,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       }
     ],
     "image" : "superimage.jpg",
@@ -70,7 +70,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       },
       {
         "title": "Titre objectif B",
@@ -78,7 +78,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       },
       {
         "title": "Titre objectif C",
@@ -86,7 +86,7 @@
         "achieved": false,
         "image": "superimage.jpg",
         "duration": 5,
-        "info": "Blabla"
+        "description": "Blabla"
       }
     ],
     "image" : "superimage.jpg",

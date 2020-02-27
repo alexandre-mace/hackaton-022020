@@ -36,6 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.d-flex {
+  display: flex;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
 .bottom-navigation {
   position: absolute;
   bottom: 0;
@@ -59,5 +65,15 @@
   text-align: left;
 }
 .category-title {
+  text-align: center;
+}
+.goal-card {
+  background-color: lightgray;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 7px;
+}
+.goals-title {
   text-align: center;
 }
