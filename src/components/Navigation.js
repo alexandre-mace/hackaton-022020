@@ -2,15 +2,15 @@ import React from 'react';
 
 const Navigation = ({ setCurrentPage }) => {
     return (
-        <div className={"bottom-navigation"}>
+        <div className={"top-navigation"}>
             <div onClick={() => setCurrentPage(0)}>
-                home
+                A propos
             </div>
             <div onClick={() => setCurrentPage(1)}>
-                leaderboard
+                Logo
             </div>
             <div onClick={() => setCurrentPage(2)}>
-                game
+                Défis
             </div>
         </div>
     )
