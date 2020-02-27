@@ -4,9 +4,11 @@ import data from "./data/data.json";
 import Navigation from "./components/Navigation";
 import SearchPage from "./page/SearchPage";
 import LeaderBoard from './page/LeaderBoard';
+import Challenge from './page/Challenge'
+
 
 function App() {
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(2);
     const [firstOption, setFirstOption] = useState(null);
     const [firstOptionSelection, setFirstOptionSelection] = useState(false);
     const [secondOptionSelection, setSecondOptionSelection] = useState(false);
@@ -30,7 +32,10 @@ function App() {
               />
             }
             {currentPage === 1 &&
-            <LeaderBoard />
+              <LeaderBoard />
+            }
+            {currentPage === 2 &&
+              <Challenge />
             }
             <Navigation
                 setCurrentPage={setCurrentPage}

@@ -1,0 +1,10 @@
+.challenge {
+  padding: 0 20px;
+}
+
+.challenge__section {
+  padding: 20px;
+  background-color: rgba(0,0,0, 0.05);
+  margin: 40px 0
+}
+
