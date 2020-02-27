@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Envoyer un mail",
+    "pollutionScore": 4,
+    "alternatives": [
+        "Discord",
+        "Slack"
+    ]
+  },
+  {
+    "title": "Envoyer un message via Discord",
+    "pollutionScore": 4,
+    "alternatives": [
+      "Discord",
+      "Slack"
+    ]
+  },
+  {
+    "title": "Regarder une heure de stream",
+    "pollutionScore": 4,
+    "alternatives": [
+      "Discord",
+      "Slack"
+    ]
+  },
+  {
+    "title": "Regarder une heure de série",
+    "pollutionScore": 8,
+    "alternatives": [
+      "Discord",
+      "Slack"
+    ]
+  }
+]
