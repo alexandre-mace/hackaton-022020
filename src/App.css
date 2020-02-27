@@ -31,6 +31,12 @@
 .search-input {
   margin: auto;
 }
+.MuiAutocomplete-paper > ul {
+  max-height: 60vh !important;
+}
+.MuiAutocomplete-paper > ul li:first-child {
+  padding-top: 0 !important;
+}
 .search-input-wrapper {
   /*height: 60vh;*/
 
@@ -89,6 +95,11 @@
 .goals-title {
   text-align: center;
   margin-top: 20px;
+}
+.MuiAutocomplete-paper {
+  width: 100vw !important;
+  transform: translateX(-20px) !important;
+  box-shadow: none!important;
 }
 @keyframes goal-progression-bar {
   0% {
@@ -163,19 +174,13 @@
   position: absolute;
   bottom: 0;
   left: 5px;
-
-  /* Set our transitions up. */
-  -webkit-transition: height 500ms ease;
-  -moz-transition: height 500ms ease;
-  -o-transition: height 500ms ease;
-  transition: height 500ms ease;
 }
-
-.container:hover #bar-green {height: 90%;}
-#bar-green {background-color: #2ecc71;}
-.container:hover #bar-red {height: 100%;}
-#bar-red {background-color: #e74c3c;}
-
+.w-100 {
+  width: 100% !important;
+}
+.MuiAutocomplete-root {
+  width: 100% !important;
+}
 .percent {
   color: #fff;
   text-align: center;

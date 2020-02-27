@@ -6,17 +6,14 @@ import Button from '@material-ui/core/Button';
 import {Bar} from 'react-chartjs-2';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
 
 const useStyles = makeStyles({
     listbox: {
-      marginTop: "20px"
     },
     option: {
         marginTop: '20px',
-    },
-    list: {
-        width: 250,
+        padding: "20px",
+        paddingBottom: "0"
     },
     fullList: {
         width: 'auto',
@@ -25,14 +22,15 @@ const useStyles = makeStyles({
         borderTopLeftRadius: "25px",
         borderTopRightRadius: "25px",
         padding: "20px",
-        minHeight: "60vh",
+        paddingTop: "50px",
+        minHeight: "80vh",
         maxWidth: "100vw"
     },
     drawerRoot: {
     }
 });
 
-const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption, search, setSearch, setFirstOptionSelection, setSecondOptionSelection, firstOptionSelection, secondOptionSelection }) => {
+const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption, search, setSearch }) => {
     const classes = useStyles();
     const [state, setState] = React.useState({
         bottom: false,
@@ -44,20 +42,29 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
-        setCurrentActionSelection(actionSelection)
-        await setDisplayAutocomplete(!displayAutocomplete);
+        setCurrentActionSelection(actionSelection);
+
+        if (open) {
             setState({ ...state, [side]: open });
+            setTimeout(() => {
+                setDisplayAutocomplete(!displayAutocomplete)
+            }, 180)
+        }
+        if (!open) {
+            setDisplayAutocomplete(!displayAutocomplete);
+            setTimeout(() => {
+
+                setState({ ...state, [side]: open });
+            }, 180)
+        }
     };
 
     const fullList = side => (
         <div
-            className={classes.fullList}
+            className={classes.fullList + " w-100"}
             role="presentation"
         >
-            <div
-                className={classes.fullList}
-                role="presentation"
-            >
+                {displayAutocomplete &&
                 <Autocomplete
                     id="combo-box-demo"
                     open={displayAutocomplete}
@@ -82,33 +89,66 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                     }
                     style={{ width: 300 }}
                     renderInput={params => (
-                        <TextField {...params} label="Action à comparer" variant={"filled"} fullWidth />
+                        <TextField {...params} label="Action à comparer" variant="outlined" fullWidth />
                     )}
                 />
-            </div>
+                }
         </div>
     );
 
+    let barData = false;
+
+    if (search) {
+        barData = {
+            labels: [],
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: firstOption.pollutionScore > secondOption.pollutionScore ? "#2ecc71" : "#e74c3c",
+                    borderWidth: 1,
+                    data: [firstOption.pollutionScore * 10]
+                },
+                {
+                    label: 'My First dataset',
+                    backgroundColor: secondOption.pollutionScore > firstOption.pollutionScore ? "#2ecc71" : "#e74c3c",
+                    borderWidth: 1,
+                    data: [secondOption.pollutionScore * 10]
+                }
+            ]
+        };
+    }
+
     return (
-        <div className={"search-wrapper"}>
-            <div className={"d-flex flex-column mb-3 align-items-center"}>
-                <div className={"page-title"}>Qui est le moins pire ?</div>
-                <div className={"select-button"} onClick={toggleDrawer('bottom', "first", true)}>
-                    {firstOption ? firstOption.title : "+ Sujet 1"}
+        <>
+            {!search &&
+            <div className={"search-wrapper"}>
+                <div className={"d-flex flex-column mb-3 align-items-center"}>
+                    <div className={"page-title"}>Qui est le moins pire ?</div>
+                    <div className={"select-button"} onClick={toggleDrawer('bottom', "first", true)}>
+                        {firstOption ? firstOption.title : "+ Sujet 1"}
+                    </div>
+                    <div className={"text-center mt-3 mb-3"}>vs</div>
+                    <div className={"select-button"} onClick={toggleDrawer('bottom', "second", true)}>
+                        {secondOption ? secondOption.title : "+ Sujet 2"}
+                    </div>
                 </div>
-                <div className={"text-center mt-3 mb-3"}>vs</div>
-                <div className={"select-button"} onClick={toggleDrawer('bottom', "second", true)}>
-                    {secondOption ? secondOption.title : "+ Sujet 2"}
+                <div className={"d-flex mt-auto justify-content-center"}>
+                    <div>
+                        <Button disabled={(!firstOption || !secondOption)} variant="contained" color="primary" onClick={() => setSearch(true)}>
+                            Lancer
+                        </Button>
+                    </div>
                 </div>
+
+                <Drawer classes={{ paper: classes.paper, root: classes.drawerRoot}} anchor="bottom" open={state.bottom} onClose={toggleDrawer('bottom', false)}>
+                    {fullList('bottom')}
+                </Drawer>
             </div>
-            <div className={"d-flex mt-auto justify-content-center"}>
-                <div>
-                    <Button variant="contained" color="primary" onClick={() => setSearch(true)}>
-                        Lancer
-                    </Button>
-                </div>
-            </div>
+            }
             {search &&
+            <div className={"search-wrapper"}>
+                <div className={"d-flex flex-column mb-3 align-items-center"}>
+                    <div className={"page-title"}>Le moins pire est...</div>
             <div className={"mt-3"}>
                 <div>
                     {
@@ -119,47 +159,55 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                 </div>
                 <div className={"d-flex justify-content-center"}>
                     <div>
-                        <div className="bar-outside">
-                            <div className="bar-inside" id="bar-green"></div>
-                        </div>
-                        <p className="percent">90%</p>
-                        {firstOption.pollutionScore}
-                    </div> vs
+                        <Bar
+                            data={barData}
+                            width={300}
+                            height={300}
+                            options={{
+                                legend: {
+                                    display: false
+                                },
+                                tooltips: {
+                                    enabled: false
+                                },
+                                scales: {
+                                    xAxes: [{
+                                        gridLines: {
+                                            display:false
+                                        },
+                                    }],
+                                    yAxes: [{
+                                        gridLines: {
+                                            display:false
+                                        },
+                                        ticks: {
+                                            beginAtZero: true,
+                                            min: 0,
+                                            display: false
+                                        }
+                                    }]
+                                }
+                            }}
+                        />
+                    </div>
+                </div>
+                <div className={"d-flex mt-auto justify-content-center"}>
                     <div>
-                        <div className="item">
-                            <div className="bar-outside">
-                                <div className="bar-inside" id="bar-red"></div>
-                            </div>
-                            <p className="percent">100%</p>
-                        </div>
-                        {secondOption.pollutionScore}
+                        <Button variant="contained" color="primary" onClick={() => {
+                            setSearch(false)
+                            setFirstOption(null)
+                            setSecondOption(null)
+                        }}>
+                            Nouvelle recherche
+                        </Button>
                     </div>
                 </div>
             </div>
-            }
-            <Drawer classes={{ paper: classes.paper, root: classes.drawerRoot}} anchor="bottom" open={state.bottom} onClose={toggleDrawer('bottom', false)}>
-                {fullList('bottom')}
-            </Drawer>
-
-            {secondOptionSelection &&
-            <div className="search-input-wrapper">
-                <Autocomplete
-                    open={true}
-                    id="combo-box-demo"
-                    className={"search-input"}
-                    options={data}
-                    getOptionLabel={option => option.title}
-                    onInputChange={(event, value) => {
-                        setSecondOption(data.filter((singleData) => (singleData.title === value))[0])
-                    }}
-                    style={{ width: 300 }}
-                    renderInput={params => (
-                        <TextField {...params} label="Action à comparer" variant="filled" fullWidth />
-                    )}
-                />
+                </div>
             </div>
+
             }
-        </div>
+            </>
     )
 };
 export default SearchPage;
