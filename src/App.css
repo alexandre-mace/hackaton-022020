@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Raleway' !important;
+  font-family: 'Raleway', "sans-serif" !important;
   color: white;
 }
 .d-flex {
