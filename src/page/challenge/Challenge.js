@@ -6,11 +6,7 @@ import StartChallenge from './StartChallenge'
 import Quiz from './Quiz'
 
 const Challenge = ({setDisplayHeader, randomUsername, setCurrentPage}) => {
-  const [challengeStep, setChallengeStep] = useState(4)
-
-  useEffect(() => {
-    setDisplayHeader(false)
-  })
+  const [challengeStep, setChallengeStep] = useState(0);
 
   const onChallengeStart = (stepNumber) => {
     if (stepNumber > 1) {
