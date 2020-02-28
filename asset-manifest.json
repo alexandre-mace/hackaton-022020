@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hackaton-022020/static/css/main.d72cc4f9.chunk.css",
+    "main.css": "/hackaton-022020/static/css/main.ac598069.chunk.css",
     "main.js": "/hackaton-022020/static/js/main.bcf11623.chunk.js",
     "main.js.map": "/hackaton-022020/static/js/main.bcf11623.chunk.js.map",
     "runtime-main.js": "/hackaton-022020/static/js/runtime-main.139218dd.js",
@@ -8,15 +8,15 @@
     "static/js/2.4ba2b563.chunk.js": "/hackaton-022020/static/js/2.4ba2b563.chunk.js",
     "static/js/2.4ba2b563.chunk.js.map": "/hackaton-022020/static/js/2.4ba2b563.chunk.js.map",
     "index.html": "/hackaton-022020/index.html",
-    "precache-manifest.ba1e0ad807f15b6af81452f7f715040e.js": "/hackaton-022020/precache-manifest.ba1e0ad807f15b6af81452f7f715040e.js",
+    "precache-manifest.3aa2961bbbbe0f68461e4812c9a03aea.js": "/hackaton-022020/precache-manifest.3aa2961bbbbe0f68461e4812c9a03aea.js",
     "service-worker.js": "/hackaton-022020/service-worker.js",
-    "static/css/main.d72cc4f9.chunk.css.map": "/hackaton-022020/static/css/main.d72cc4f9.chunk.css.map",
+    "static/css/main.ac598069.chunk.css.map": "/hackaton-022020/static/css/main.ac598069.chunk.css.map",
     "static/js/2.4ba2b563.chunk.js.LICENSE.txt": "/hackaton-022020/static/js/2.4ba2b563.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.139218dd.js",
     "static/js/2.4ba2b563.chunk.js",
-    "static/css/main.d72cc4f9.chunk.css",
+    "static/css/main.ac598069.chunk.css",
     "static/js/main.bcf11623.chunk.js"
   ]
 }
