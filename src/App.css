@@ -158,6 +158,7 @@
   height: 100%;
   padding: 0 20px;
   padding-top: 20px;
+  padding-bottom: 20px;
   min-height: calc(100vh - 80px);
 }
 .page-description {
@@ -193,6 +194,10 @@
 }
 .search-input {
   margin: auto;
+}
+.searchedcard {
+  background-color: #4B4A4A;
+  color: white;
 }
 .MuiAutocomplete-paper > ul {
   max-height: 60vh !important;
@@ -267,6 +272,15 @@
 }
 .category-title {
   text-align: center;
+}
+.arrow-back {
+  margin-bottom: 30px;
+}
+.arrow {
+  font-size: 30px;
+}
+.back {
+  text-decoration: underline;
 }
 .goal-card {
   background-color: lightgray;

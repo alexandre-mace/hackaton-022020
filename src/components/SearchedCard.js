@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import '../assets/styles/searchedCard.css'
 
-const SearchedCard = ({ item, index }) => {
+const SearchedCard = ({ item, index, setFirstOption, setSecondOption, setSearch, setCurrentPage }) => {
   const [active, setActive] = useState(false)
 
-  const onSearchedClick = () => {
-    setActive(true)
-  }
 
   return (
     <div className='searchedcard'>
-      <button className='searchedcard__button' onClick={() => onSearchedClick()}>
+      <button className='searchedcard__button' onClick={() => {
+        setFirstOption(item.firstAction)
+        setSecondOption(item.secondAction)
+        setSearch(true);
+        setCurrentPage(0);
+      }}>
         <div className='searchedcard__wrapper'>
-          {!active && <p>{index + 1}</p>}
+          {!active && <span>{index + 1}</span>}
           <p className='searchedcard__action'>{item.firstAction.title}</p>
-          VS
+          <img src="./../assets/images/vs.png" alt=""/>
           <p className='searchedcard__action'>{item.secondAction.title}</p>
         </div>
       </button>

@@ -32,14 +32,13 @@ const useStyles = makeStyles({
     }
 });
 
-const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption, search, setSearch }) => {
+const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, secondOption, setSecondOption, search, setSearch, setCurrentPage }) => {
     const classes = useStyles();
     const [state, setState] = React.useState({
         bottom: false,
     });
     const [displayAutocomplete, setDisplayAutocomplete] = React.useState(false);
     const [currentActionSelection, setCurrentActionSelection] = React.useState(null);
-    const [onBoarding, setOnBoarding] = React.useState(false);
 
     const toggleDrawer = (side, actionSelection, open) => async event => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -183,6 +182,7 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
             }
             {search &&
             <div className={"search-wrapper d-flex flex-column align-items-center h-100"}>
+                <div onClick={() => setCurrentPage(1)} className={"arrow-back"}><span className={"arrow"}>&#8592;</span> <span className={"back"}>Retour</span></div>
                 <div className={"page-title"}>Et le vainqueur est...</div>
                     <div className={"d-flex justify-content-center"}>
                         <div>

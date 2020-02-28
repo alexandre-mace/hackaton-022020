@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Navigation = ({ setCurrentPage }) => {
+const Navigation = ({ setCurrentPage, setSearch }) => {
     return (
         <div className={"top-navigation"}>
-            <button className={"logo"} onClick={() => setCurrentPage(0)}>
+            <button className={"logo"} onClick={() => {
+                setCurrentPage(0)
+                setSearch(false)
+            }}>
                 <img width={46} height={39} src='./../assets/images/logo-colors.png'/>
                 <div className={"logo-name"}>EKO</div>
             </button>

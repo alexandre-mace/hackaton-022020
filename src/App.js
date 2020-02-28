@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './App.css';
-import data from "./data/data.json";
 import Navigation from "./components/Navigation";
 import SearchPage from "./page/SearchPage";
 import LeaderBoard from './page/LeaderBoard';
@@ -15,6 +14,7 @@ function App() {
     const [secondOptionSelection, setSecondOptionSelection] = useState(false);
     const [secondOption, setSecondOption] = useState(null);
     const [search, setSearch] = useState(false);
+    const [onBoarding, setOnBoarding] = React.useState(false);
 
     return (
         <div className={"app-container"}>
@@ -22,6 +22,9 @@ function App() {
               <SearchPage
                 setFirstOption={setFirstOption}
                 setSecondOption={setSecondOption}
+                setCurrentPage={setCurrentPage}
+                setOnBoarding={setOnBoarding}
+                onBoarding={onBoarding}
                 search={search}
                 firstOption={firstOption}
                 secondOption={secondOption}
@@ -33,7 +36,12 @@ function App() {
               />
             }
             {currentPage === 1 &&
-              <LeaderBoard />
+            <LeaderBoard
+                setCurrentPage={setCurrentPage}
+                setSearch={setSearch}
+                setFirstOption={setFirstOption}
+                setSecondOption={setSecondOption}
+            />
             }
             {currentPage === 2 &&
               <Challenge setDisplayHeader={setDisplayHeader} />
@@ -41,6 +49,7 @@ function App() {
             {displayHeader && (
               <Navigation
                   setCurrentPage={setCurrentPage}
+                  setSearch={setSearch}
               />
             )}
         </div>
