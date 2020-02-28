@@ -112,13 +112,13 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
             datasets: [
                 {
                     label: 'My First dataset',
-                    backgroundColor: firstOption.pollutionScore > secondOption.pollutionScore ? "#4B4A4A" : "#D52E97",
+                    backgroundColor: firstOption.pollutionScore > secondOption.pollutionScore ? "#4B4A4A" : "#4CCE8D",
                     borderWidth: 1,
                     data: [firstOption.pollutionScore * 10]
                 },
                 {
                     label: 'My First dataset',
-                    backgroundColor: secondOption.pollutionScore > firstOption.pollutionScore ? "#4B4A4A" : "#D52E97",
+                    backgroundColor: secondOption.pollutionScore > firstOption.pollutionScore ? "#4B4A4A" : "#4CCE8D",
                     borderWidth: 1,
                     data: [secondOption.pollutionScore * 10]
                 }
@@ -224,19 +224,44 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                         </div>
                     </div>
                 <div className={"d-flex justify-content-center"}>
-                    <div className={"result-action"}>{firstOption.title}</div>
-                    <div className={"result-action"}>{secondOption.title}</div>
+                    <div className={"result-action"}>
+                        {firstOption.pollutionScore < secondOption.pollutionScore
+                            ? <img width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
+                            : <img width={23} height={22} src={"../assets/images/finger-color.png"} />
+                        }
+                        <div>{firstOption.title}</div>
+                    </div>
+                    <div className={"result-action"}>
+                        {secondOption.pollutionScore < firstOption.pollutionScore
+                            ? <img width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
+                            : <img width={23} height={22} src={"../assets/images/finger-color.png"} />
+                        }
+                        <div>{secondOption.title}</div>
+                    </div>
                 </div>
                 <div className={"result-card"}>
-                    <div className={"result-card-title"}>{firstOption.title}</div>
-                    <div className={"result-card-text"}>{firstOption.text}blblblblbl</div>
+                    <div className={"result-card-title"}>
+                        {secondOption.pollutionScore < firstOption.pollutionScore
+                            ? <img className={"mr-1"} width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
+                            : <img className={"mr-1"} width={23} height={22} src={"../assets/images/finger-color.png"} />
+                        }
+                        {firstOption.title}
+                    </div>
+                    <div className={"result-card-text"}>{firstOption.text}</div>
                 </div>
                 <div className={"result-card"}>
-                    <div className={"result-card-title"}>{secondOption.title}</div>
-                    <div className={"result-card-text"}>{secondOption.text}blblblblbl</div>
+                    <div className={"result-card-title"}>
+                        {secondOption.pollutionScore > firstOption.pollutionScore
+                            ? <img className="mr-1" width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
+                            : <img className={"mr-1"} width={23} height={22} src={"../assets/images/finger-white.png"} />
+                        }
+                        {secondOption.title}
+                    </div>
+                    <div className={"result-card-text"}>{secondOption.text}</div>
                 </div>
                 <div>
                     <div className={"result-helper"}>Et si il y avait mieux ?</div>
+                    <img className={"mt-3"} width={84} height={70} src={"../assets/images/logo-colors.png"} />
                     <div className={"result-helper-content"}>
                         <div className={"result-helper-title"}>Pour une meilleure alternative</div>
                         <div className={"result-helper-text"}>On te conseille d'essayer Discord</div>
