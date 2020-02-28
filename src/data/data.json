@@ -1,38 +1,34 @@
 [
   {
-    "title": "Envoyer un mail",
-    "text": "je sais pas ce que je peux mettre ici de censé.",
+    "title": "Envoyer un mail au format texte",
+    "text": "Un mail consomme 20g de CO2 et cela augmente en même temps que le nombre de destinataires ou le poids des pièces jointes.",
+    "pollutionScore": 20,
+    "alternatives": [
+        "Envoyer des SMS"
+    ]
+  },
+  {
+    "title": "Stocker un mail pendant 1an",
     "pollutionScore": 10,
+    "text": "Un mail stocké dans sa boite mail est aussi stocké sur les serveurs donc consomme 2 fois plus.",
     "alternatives": [
-        "Discord",
-        "Slack"
+      "Pour une meilleure alternative, on te conseille de stocker tes mails en local avant de les supprimer de ta boite."
     ]
   },
   {
-    "title": "Envoyer un message via Discord",
-    "pollutionScore": 5,
-    "text": "je sais pas ce que je peux mettre ici de censé.",
+    "title": "Acheter un smartphone neuf",
+    "text": "La fabrication d'un smartphone nécessite l'extraction de terres rares.",
+    "pollutionScore": 100000,
     "alternatives": [
-      "Discord",
-      "Slack"
+      "Tu devrais plutôt faire réparer ton smartphone pour augmenter sa durée de vie. Jette un oeil sur SOSAV.fr"
     ]
   },
   {
-    "title": "Regarder une heure de stream",
-    "text": "je sais pas ce que je peux mettre ici de censé.",
-    "pollutionScore": 4,
+    "title": "Acheter un smartphone reconditionné",
+    "text": "Reconditionner un téléphone permet d’économiser 60% de matière première par rapport à la fabrication d’un nouveau terminal numérique.",
+    "pollutionScore": 10000,
     "alternatives": [
-      "Discord",
-      "Slack"
-    ]
-  },
-  {
-    "title": "Regarder une heure de série",
-    "text": "je sais pas ce que je peux mettre ici de censé.",
-    "pollutionScore": 8,
-    "alternatives": [
-      "Discord",
-      "Slack"
+      "Tu devrais plutôt faire réparer ton smartphone pour augmenter sa durée de vie. Jette un oeil sur SOSAV.fr"
     ]
   }
 ]

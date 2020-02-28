@@ -132,21 +132,21 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                     &#10005;
                 </div>
                 <div className={"onboarding-title"}>
-                    Bienvenue sur EKO
+                    Bienvenue !
                 </div>
                 <div className={"onboarding-text"}>
-                    Compare l'impact écologique de tes habitudes numériques.
+                    Eko t’aide à comparer l’impact écologique de tes habitudes numériques.
                 </div>
             </div>
             {!search &&
             <div className={"search-wrapper"}>
                 <div className={"d-flex flex-column mb-3 align-items-center"}>
-                    <div className={"page-title align-self-start"}>Qui est le moins pire ?</div>
+                    <div className={"page-title align-self-start"}>Que souhaites-tu comparer ?</div>
                     <div className={"page-description"}>
-                        Sélectionner les items que vous souhaitez comparer dans la liste disponible.
+                        Il y a trop de pollution dans l’air, renseigne toi un peu pour mieux agir. Ou au moins limiter la casse… 
                     </div>
                     <div className={"select-button"} onClick={toggleDrawer('bottom', "first", true)}>
-                        {firstOption ? firstOption.title : "Séléctionner l'item 1"}
+                        {firstOption ? firstOption.title : "Sélectionne une habitude"}
                     </div>
                     <div className={"text-center mt-3 mb-3"}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="46.8" height="36.6" viewBox="0 0 46.8 36.6">
@@ -164,10 +164,10 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                         </svg>
                     </div>
                     <div className={"select-button"} onClick={toggleDrawer('bottom', "second", true)}>
-                        {secondOption ? secondOption.title : "Sélectionner l'item 2"}
+                        {secondOption ? secondOption.title : "Sélectionne une habitude"}
                     </div>
                 </div>
-                <div className={"d-flex mt-auto justify-content-center w-100"}>
+                <div className={"d-flex mt-auto justify-content-center w-100 mt-8"}>
                     <div className={"w-100"}>
                         <Button className={"go-button"} disabled={(!firstOption || !secondOption)} variant="contained" color="primary" onClick={() => setSearch(true)}>
                             Go !
@@ -241,9 +241,9 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                 </div>
                 <div className={"result-card mt-8"}>
                     <div className={"result-card-title"}>
-                        {secondOption.pollutionScore < firstOption.pollutionScore
+                        {secondOption.pollutionScore > firstOption.pollutionScore
                             ? <img className={"mr-1"} width={26} height={26} src={"assets/images/ic_cup-color.png"} />
-                            : <img className={"mr-1"} width={23} height={22} src={"assets/images/finger-color.png"} />
+                            : <img className={"mr-1"} width={23} height={22} src={"assets/images/finger-white.png"} />
                         }
                         {firstOption.title}
                     </div>
@@ -251,7 +251,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                 </div>
                 <div className={"result-card"}>
                     <div className={"result-card-title"}>
-                        {secondOption.pollutionScore > firstOption.pollutionScore
+                        {secondOption.pollutionScore < firstOption.pollutionScore
                             ? <img className="mr-1" width={26} height={26} src={"assets/images/ic_cup-color.png"} />
                             : <img className={"mr-1"} width={23} height={22} src={"assets/images/finger-white.png"} />
                         }
@@ -264,7 +264,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                     <img className={"mt-3"} width={84} height={70} src={"assets/images/logo-colors.png"} />
                     <div className={"result-helper-content"}>
                         <div className={"result-helper-title"}>Pour une meilleure alternative</div>
-                        <div className={"result-helper-text"}>On te conseille d'essayer Discord</div>
+                        <div className={"result-helper-text"}>{secondOption.pollutionScore < firstOption.pollutionScore ? firstOption.alternatives[0] : secondOption.alternatives[0]}</div>
                     </div>
 
                 </div>

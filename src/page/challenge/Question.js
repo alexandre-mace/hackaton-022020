@@ -79,14 +79,14 @@ const Question = ({question, setQuestionStep, questionCount, friendUsername, set
           <div className='info-content'>
             {questionTimer === 0 && showAnswerTimer > 0 && <p className='answertimer'>{showAnswerTimer}</p>}
             <div className='info-bravo'>Bravo !</div>
-            <div className='info-text'>Un tweet ne consomme que 0,02g de CO2</div>
+            <div className='info-text'>{question.tips}</div>
           </div>
           }
           {(selected && !selected.isTrue) &&
           <div className='info-content'>
             {questionTimer === 0 && showAnswerTimer > 0 && <p className='answertimer'>{showAnswerTimer}</p>}
             <div className='info-bravo'>Raté...</div>
-            <div className='info-text'>Un tweet ne consomme que 0,02g de CO2</div>
+            <div className='info-text'>{question.tips}</div>
           </div>
           }
 

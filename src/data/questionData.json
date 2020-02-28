@@ -1,82 +1,87 @@
 [
   {
     "step": 0,
-    "text" : "La super question 1",
+    "text" : "Selon vous, lequel de ces outils vaut-il mieux utiliser pour stocker ses fichiers sur le long terme ?",
     "answers": [
       {
-        "text": "La réponse 1",
+        "text": "Le cloud",
         "isTrue": false,
         "hasFriendAnswered": false
       },
       {
-        "text": "La réponse 2",
+        "text": "Un disque dur externe",
         "isTrue": true,
         "hasFriendAnswered": true
       }
-    ]
+    ],
+    "tips": "Effectivement, 10go stockés sur le cloud consomment 10 fois plus que sur un disque dur"
   },
   {
     "step": 1,
-    "text" : "La super question 2",
+    "text" : "Selon vous, laquelle de ces propositions a l’impact écologique le plus négatif ?",
     "answers": [
       {
-        "text": "La réponse 1",
+        "text": "Recherche internet sur un ordi fixe",
         "isTrue": false,
         "hasFriendAnswered": true
       },
       {
-        "text": "La réponse 2",
+        "text": "Recherche internet sur un ordi portable",
         "isTrue": true,
         "hasFriendAnswered": false
       }
-    ]
+    ],
+    "tips": "Une recherche sur un ordinateur portable est 4 fois moins énergivore que sur un ordinateur fixe à cause de leurs différents coût de fabrication." 
   },
   {
     "step": 2,
-    "text" : "La super question 3",
+    "text" : "Sur quel plateforme est-il préférable d'écouter de la musique ?",
     "answers": [
       {
-        "text": "La réponse 1",
-        "isTrue": false,
+        "text": "Spotify",
+        "isTrue": true,
         "hasFriendAnswered": true
       },
       {
-        "text": "La réponse 2",
-        "isTrue": true,
+        "text": "Youtube",
+        "isTrue": false,
         "hasFriendAnswered": false
       }
-    ]
+    ],
+    "tips": "Le streaming vidéo représente 80% du traffic de données en ligne, évite de charger de la vidéo quand tu n'écoutes la musique."
   },
   {
     "step": 3,
-    "text" : "La super question 4",
+    "text" : "A choisir, 4G ou Wifi ?",
     "answers": [
       {
-        "text": "La réponse 1",
-        "isTrue": true,
+        "text": "4G",
+        "isTrue": false,
         "hasFriendAnswered": false
       },
       {
-        "text": "La réponse 2",
-        "isTrue": false,
+        "text": "Wifi",
+        "isTrue": true,
         "hasFriendAnswered": true
       }
-    ]
+    ],
+    "tips": "6,7 Go de 4g utilisées par mois consomme 4500g de CO2, ce qui représente environ 20kmen voiture."
   },
   {
     "step": 4,
-    "text" : "La super question 5",
+    "text" : "Est-il pire d'écouter de la musique sur CD ou en streaming ?",
     "answers": [
       {
-        "text": "La réponse 1",
-        "isTrue": false,
+        "text": "Streaming",
+        "isTrue": true,
         "hasFriendAnswered": true
       },
       {
-        "text": "La réponse 2",
-        "isTrue": true,
+        "text": "CD",
+        "isTrue": false,
         "hasFriendAnswered": false
       }
-    ]
+    ],
+    "tips": "Ecouter un album en streaming 27 fois, équivaut à la fabrication de ce CD."
   }
 ]

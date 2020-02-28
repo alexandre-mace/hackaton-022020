@@ -157,8 +157,6 @@
   height: 100%;
 }
 .search-wrapper {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   padding: 0 20px;
   padding-top: 20px;
@@ -308,7 +306,7 @@
   text-align: left;
   margin-bottom: 30px;
   font-size: 30px;
-  width: 70%;
+  width: 75%;
 }
 .page-subtitle {
   text-align: left;
