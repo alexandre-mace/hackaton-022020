@@ -16,7 +16,7 @@ const SearchedCard = ({ item, index, setFirstOption, setSecondOption, setSearch,
         <div className='searchedcard__wrapper'>
           {!active && <span>{index + 1}</span>}
           <p className='searchedcard__action'>{item.firstAction.title}</p>
-          <img src="./../assets/images/vs.png" alt=""/>
+          <img src={"assets/images/vs.png"} alt=""/>
           <p className='searchedcard__action'>{item.secondAction.title}</p>
         </div>
       </button>

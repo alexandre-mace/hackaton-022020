@@ -73,7 +73,7 @@ const Question = ({question, setQuestionStep, questionCount, friendUsername, set
       {questionTimer === 0 && (
         <div className='info'>
           <div>
-            <img width={86} height={72} src='../assets/images/logo.png' />
+            <img width={86} height={72} src={"assets/images/logo.png"} />
           </div>
           <div className='info-content'>
             {questionTimer === 0 && showAnswerTimer > 0 && <p className='answertimer'>{showAnswerTimer}</p>}

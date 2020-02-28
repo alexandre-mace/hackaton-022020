@@ -6,7 +6,7 @@ const StartChallenge = ({setChallengeStep, randomUsername}) => {
       <div className='player__name'>{randomUsername}</div>
       <div className='friend__text'>Êtes-vous prêt(e) pour ce défi ?</div>
       <div className='circle'>
-        <img width='132' height='111' src='../assets/images/logo.png' />
+        <img width='132' height='111' src={"assets/images/logo.png"} />
       </div>
       <div>
         <div className='player__name'>AirPod solitaire</div>

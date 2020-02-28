@@ -67,8 +67,8 @@ const Results = ({goodAnswers, randomUsername, setChallengeStep, setDisplayHeade
             <div className={"d-flex justify-content-center"}>
                 <div className={"result-action"}>
                     {goodAnswers > 2
-                        ? <img width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
-                        : <img width={23} height={22} src={"../assets/images/finger-color.png"} />
+                        ? <img width={26} height={26} src={"assets/images/ic_cup-color.png"} />
+                        : <img width={23} height={22} src={"assets/images/finger-color.png"} />
                     }
                     <div className={"h-50"}>{randomUsername}</div>
                     <div className={"d-flex align-items-center"}>
@@ -78,8 +78,8 @@ const Results = ({goodAnswers, randomUsername, setChallengeStep, setDisplayHeade
                 </div>
                 <div className={"result-action"}>
                     {goodAnswers < 2
-                        ? <img width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
-                        : <img width={23} height={22} src={"../assets/images/finger-color.png"} />
+                        ? <img width={26} height={26} src={"assets/images/ic_cup-color.png"} />
+                        : <img width={23} height={22} src={"assets/images/finger-color.png"} />
                     }
                     <div className={"h-52"}>AirPod solitaire</div>
                     <div className={"d-flex align-items-center"}>

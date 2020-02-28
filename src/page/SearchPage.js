@@ -226,15 +226,15 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                 <div className={"d-flex justify-content-center"}>
                     <div className={"result-action"}>
                         {firstOption.pollutionScore < secondOption.pollutionScore
-                            ? <img width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
-                            : <img width={23} height={22} src={"../assets/images/finger-color.png"} />
+                            ? <img width={26} height={26} src={"assets/images/ic_cup-color.png"} />
+                            : <img width={23} height={22} src={"assets/images/finger-color.png"} />
                         }
                         <div>{firstOption.title}</div>
                     </div>
                     <div className={"result-action"}>
                         {secondOption.pollutionScore < firstOption.pollutionScore
-                            ? <img width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
-                            : <img width={23} height={22} src={"../assets/images/finger-color.png"} />
+                            ? <img width={26} height={26} src={"assets/images/ic_cup-color.png"} />
+                            : <img width={23} height={22} src={"assets/images/finger-color.png"} />
                         }
                         <div>{secondOption.title}</div>
                     </div>
@@ -242,8 +242,8 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                 <div className={"result-card mt-8"}>
                     <div className={"result-card-title"}>
                         {secondOption.pollutionScore < firstOption.pollutionScore
-                            ? <img className={"mr-1"} width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
-                            : <img className={"mr-1"} width={23} height={22} src={"../assets/images/finger-color.png"} />
+                            ? <img className={"mr-1"} width={26} height={26} src={"assets/images/ic_cup-color.png"} />
+                            : <img className={"mr-1"} width={23} height={22} src={"assets/images/finger-color.png"} />
                         }
                         {firstOption.title}
                     </div>
@@ -252,8 +252,8 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                 <div className={"result-card"}>
                     <div className={"result-card-title"}>
                         {secondOption.pollutionScore > firstOption.pollutionScore
-                            ? <img className="mr-1" width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
-                            : <img className={"mr-1"} width={23} height={22} src={"../assets/images/finger-white.png"} />
+                            ? <img className="mr-1" width={26} height={26} src={"assets/images/ic_cup-color.png"} />
+                            : <img className={"mr-1"} width={23} height={22} src={"assets/images/finger-white.png"} />
                         }
                         {secondOption.title}
                     </div>
@@ -261,7 +261,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                 </div>
                 <div>
                     <div className={"result-helper"}>Et si il y avait mieux ?</div>
-                    <img className={"mt-3"} width={84} height={70} src={"../assets/images/logo-colors.png"} />
+                    <img className={"mt-3"} width={84} height={70} src={"assets/images/logo-colors.png"} />
                     <div className={"result-helper-content"}>
                         <div className={"result-helper-title"}>Pour une meilleure alternative</div>
                         <div className={"result-helper-text"}>On te conseille d'essayer Discord</div>

@@ -15,10 +15,10 @@ const Navigation = ({ setCurrentPage, setSearch }) => {
                     <img width={23} height={23} src={'assets/images/ic_cup.svg'} />
                 </div>
                 <div className={'nav-icon'} onClick={() => setCurrentPage(2)}>
-                    <img width={23} height={23} src={'./../assets/images/ic_fight.svg'} />
+                    <img width={23} height={23} src={'assets/images/ic_fight.svg'} />
                 </div>
                 <div className={'nav-icon'} onClick={() => setCurrentPage(2)}>
-                    <img width={23} height={23} src={'./../assets/images/ic_menu.svg'} />
+                    <img width={23} height={23} src={'assets/images/ic_menu.svg'} />
                 </div>
             </div>
         </div>
