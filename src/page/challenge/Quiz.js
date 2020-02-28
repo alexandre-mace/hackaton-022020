@@ -21,7 +21,14 @@ const Quiz = () => {
 
   return (
     <div>
-      {timer > 0 && <p>{timer}</p>}
+      {timer > 0 && (
+        <div className='ta-c'>
+          <div className='circle'>
+            <div className='timer'>{timer}</div>
+          </div>
+          <div className='friend__text '>Le défi charge</div>
+        </div>
+      )}
       {timer <= 0 && questionStep >= 0 && questionData.map((question, index) => {
         if (question.step === questionStep) {
           return <Question key={index} question={question} setQuestionStep={setQuestionStep} questionCount={questionData.length} />

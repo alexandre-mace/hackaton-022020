@@ -8,7 +8,7 @@ import Challenge from './page/challenge/Challenge'
 
 
 function App() {
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(2);
     const [displayHeader, setDisplayHeader] = useState(true)
     const [firstOption, setFirstOption] = useState(null);
     const [firstOptionSelection, setFirstOptionSelection] = useState(false);
@@ -36,12 +36,22 @@ function App() {
               <LeaderBoard />
             }
             {currentPage === 2 &&
-              <Challenge setDisplayHeader={setDisplayHeader} />
+              <Challenge setDisplayHeader={setDisplayHeader} setCurrentPage={setCurrentPage} />
             }
             {displayHeader && (
               <Navigation
                   setCurrentPage={setCurrentPage}
               />
+            )}
+            {!displayHeader && (
+              <div className='leave' >
+                <button className='leave__button' onClick={() => {
+                  setDisplayHeader(true)
+                  setCurrentPage(0)
+                }}>
+                  Quitter le défi
+                </button>
+              </div>
             )}
         </div>
     );

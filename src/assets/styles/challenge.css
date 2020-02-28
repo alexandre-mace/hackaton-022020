@@ -4,7 +4,93 @@
 
 .challenge__section {
   padding: 20px;
-  background-color: rgba(0,0,0, 0.05);
-  margin: 40px 0
+  background-color: #4b4b4b;
+  margin: 40px 0;
+  border-radius: 5px;
+}
+
+.challenge__title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.challenge__subtitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.challenge__text {
+  text-align: center;
+  font-size: 18px;
+}
+
+.challenge__button {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(#961FFF, #D52E97);
+  border: 0;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+
+.challenge__redirect {
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  padding: 0;
+  text-align: center;
+}
+.challenge__bottom {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.link {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+
+}
+.link__title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.link__desc {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.link__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.link__button {
+  background-color: transparent;
+  border: none;
+}
+
+.share {
+  border: 1px solid #CB2BA6;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+
+.share__button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
 }
 

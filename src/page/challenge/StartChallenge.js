@@ -1,17 +1,19 @@
 import React from 'react'
 
-const StartChallenge = ({setChallengeStep}) => {
+const StartChallenge = ({setChallengeStep, setCurrentPage, setDisplayHeader}) => {
   return (
-    <div>
-      <h1>Nokia 3310</h1>
-      <p>Êtes-vous prêt(e) pour ce défi ?</p>
-
+    <div className='ta-c'>
+      <div className='player__name'>Nokia 3310</div>
+      <div className='friend__text'>Êtes-vous prêt(e) pour ce défi ?</div>
+      <div className='circle'>
+        <img width='132' height='111' src='../assets/images/logo.png' />
+      </div>
       <div>
-        <p>AirPod solitaire</p>
-        <p>vient de rejoindre la partie</p>
+        <div className='player__name'>AirPod solitaire</div>
+        <div className='friend__text'>vient de rejoindre la partie !</div>
       </div>
 
-      <button onClick={() => setChallengeStep(4)}>C'est parti</button>
+      <button className='challenge__button mt-8' onClick={() => setChallengeStep(4)}>C'est parti</button>
 
     </div>
   )
