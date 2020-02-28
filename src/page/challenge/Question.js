@@ -40,7 +40,7 @@ const Question = ({question, setQuestionStep, questionCount, friendUsername, set
         {question.answers.map((answer, index) => (
           <button 
           key={index}
-          className={selected === answer.text 
+          className={(selected && selected.text === answer.text)
             ? questionTimer === 0 
                 ? answer.isTrue 
                     ? answer.hasFriendAnswered
@@ -64,7 +64,7 @@ const Question = ({question, setQuestionStep, questionCount, friendUsername, set
                 if (answer.isTrue) {
                   setGoodAnswers(goodAnswers + 1)
                 }
-               setSelected(answer.text)
+               setSelected(answer)
              }}>
             <p>{answer.text}</p>
           </button>
@@ -75,11 +75,21 @@ const Question = ({question, setQuestionStep, questionCount, friendUsername, set
           <div>
             <img width={86} height={72} src={"assets/images/logo.png"} />
           </div>
+          {(selected && selected.isTrue) &&
           <div className='info-content'>
             {questionTimer === 0 && showAnswerTimer > 0 && <p className='answertimer'>{showAnswerTimer}</p>}
             <div className='info-bravo'>Bravo !</div>
             <div className='info-text'>Un tweet ne consomme que 0,02g de CO2</div>
           </div>
+          }
+          {(selected && !selected.isTrue) &&
+          <div className='info-content'>
+            {questionTimer === 0 && showAnswerTimer > 0 && <p className='answertimer'>{showAnswerTimer}</p>}
+            <div className='info-bravo'>Raté...</div>
+            <div className='info-text'>Un tweet ne consomme que 0,02g de CO2</div>
+          </div>
+          }
+
         </div>
       )}
     </div>

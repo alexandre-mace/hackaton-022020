@@ -53,12 +53,12 @@
     "answers": [
       {
         "text": "La réponse 1",
-        "isTrue": false,
+        "isTrue": true,
         "hasFriendAnswered": false
       },
       {
         "text": "La réponse 2",
-        "isTrue": true,
+        "isTrue": false,
         "hasFriendAnswered": true
       }
     ]

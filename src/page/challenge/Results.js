@@ -3,7 +3,7 @@ import questionData from '../../data/questionData'
 import Question from './Question'
 import {Bar} from "react-chartjs-2";
 
-const Results = ({goodAnswers, randomUsername, setChallengeStep, setDisplayHeader}) => {
+const Results = ({goodAnswers, randomUsername, setChallengeStep, setDisplayHeader, setCurrentPage, resetApp}) => {
     let barData = {
         labels: [],
         datasets: [
@@ -89,7 +89,10 @@ const Results = ({goodAnswers, randomUsername, setChallengeStep, setDisplayHeade
                 </div>
             </div>
             <button className='challenge__button mt-8' onClick={() => setChallengeStep(0)}>Recommencez une partie</button>
-            <button className={"challenge__redirect mt-3 d-block m-auto"}>Retour à l'accueil</button>
+            <button onClick={() => {
+                setDisplayHeader(true)
+                resetApp()
+            }} className={"challenge__redirect mt-3 d-block m-auto"}>Retour à l'accueil</button>
             </>
     )
 }

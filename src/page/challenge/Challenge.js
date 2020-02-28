@@ -5,7 +5,7 @@ import FriendWaiting from './FriendWaiting'
 import StartChallenge from './StartChallenge'
 import Quiz from './Quiz'
 
-const Challenge = ({setDisplayHeader, randomUsername, setCurrentPage}) => {
+const Challenge = ({setDisplayHeader, randomUsername, setCurrentPage, resetApp}) => {
   const [challengeStep, setChallengeStep] = useState(0);
 
   const onChallengeStart = (stepNumber) => {
@@ -36,7 +36,7 @@ const Challenge = ({setDisplayHeader, randomUsername, setCurrentPage}) => {
             </button>
           </div>
           <div className="challenge__bottom">
-            <button className="challenge__redirect" onClick={() => setCurrentPage(0)}>Retourner au comparateur</button>
+            <button className="challenge__redirect" onClick={() => resetApp()}>Retourner au comparateur</button>
           </div>
         </>
       )}
@@ -50,7 +50,7 @@ const Challenge = ({setDisplayHeader, randomUsername, setCurrentPage}) => {
         <StartChallenge setChallengeStep={setChallengeStep} randomUsername={randomUsername}/>
       )}
       {challengeStep === 4 && (
-        <Quiz setDisplayHeader={setDisplayHeader} setChallengeStep={setChallengeStep} randomUsername={randomUsername}/>
+        <Quiz resetApp={resetApp} setCurrentPage={setCurrentPage} setDisplayHeader={setDisplayHeader} setChallengeStep={setChallengeStep} randomUsername={randomUsername}/>
       )}
     </div>
   )

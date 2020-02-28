@@ -6,6 +6,9 @@
 .d-flex {
   display: flex;
 }
+.align-self-start {
+  align-self: flex-start;
+}
 .onboarding {
   position: relative;
   z-index: 3;
@@ -172,6 +175,9 @@
   min-height: 100vh;
   overflow-x: hidden;
 }
+.default-answer:focus {
+  outline: none !important;
+}
 .default-answer.answer-selected {
   border: 4px solid #D42D98;
 }
@@ -180,8 +186,8 @@
   border: 4px solid #4CCE8D;
 }
 .default-answer.answer-false {
-  background-color: #FF363E;
-  border: 4px solid #FF363E;
+  background-color: #B7064A;
+  border: 4px solid #B7064A;
 }
 .default-answer.answer-was-true {
   border: 4px solid #4CCE8D;
@@ -320,6 +326,8 @@
 .arrow-back {
   margin-bottom: 30px;
   align-self: self-start;
+  display: flex;
+  align-items: center;
 }
 .default-answer {
   position: relative;
@@ -343,6 +351,7 @@
 }
 .arrow {
   font-size: 30px;
+  margin-right: 10px;
 }
 .back {
   text-decoration: underline;

@@ -141,7 +141,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
             {!search &&
             <div className={"search-wrapper"}>
                 <div className={"d-flex flex-column mb-3 align-items-center"}>
-                    <div className={"page-title"}>Qui est le moins pire ?</div>
+                    <div className={"page-title align-self-start"}>Qui est le moins pire ?</div>
                     <div className={"page-description"}>
                         Sélectionner les items que vous souhaitez comparer dans la liste disponible.
                     </div>
@@ -183,7 +183,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
             {search &&
             <div className={"search-wrapper d-flex flex-column align-items-center h-100"}>
                 <div onClick={() => setCurrentPage(1)} className={"arrow-back"}><span className={"arrow"}>&#8592;</span> <span className={"back"}>Retour</span></div>
-                <div className={"page-title"}>Et le vainqueur est...</div>
+                <div className={"page-title align-self-start"}>Et le vainqueur est...</div>
                     <div className={"d-flex justify-content-center"}>
                         <div>
                             <Bar

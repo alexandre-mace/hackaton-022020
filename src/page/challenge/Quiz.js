@@ -3,7 +3,7 @@ import questionData from '../../data/questionData'
 import Question from './Question'
 import Results from "./Results";
 
-const Quiz = ({setChallengeStep, setDisplayHeader, randomUsername}) => {
+const Quiz = ({setChallengeStep, setDisplayHeader, randomUsername, setCurrentPage, resetApp}) => {
   const [timer, setTimer] = useState(3)
   const [questionStep, setQuestionStep] = useState(0)
   const [goodAnswers, setGoodAnswers] = useState(0)
@@ -37,7 +37,7 @@ const Quiz = ({setChallengeStep, setDisplayHeader, randomUsername}) => {
         }
       })}
       {questionStep > (questionData.length - 1) &&
-        <Results goodAnswers={goodAnswers} setDisplayHeader={setDisplayHeader} randomUsername={randomUsername} setChallengeStep={setChallengeStep}/>
+        <Results resetApp={resetApp} setCurrentPage={setCurrentPage} goodAnswers={goodAnswers} setDisplayHeader={setDisplayHeader} randomUsername={randomUsername} setChallengeStep={setChallengeStep}/>
       }
 
     </div>

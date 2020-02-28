@@ -23,6 +23,12 @@ function App() {
     const [onBoarding, setOnBoarding] = React.useState(false);
     const [randomUsername, setRandomUsername] = React.useState(names[Math.floor(Math.random()*names.length)]);
 
+    const resetApp = () => {
+        setFirstOption(null)
+        setSecondOption(null)
+        setSearch(false)
+        setCurrentPage(0)
+    }
     return (
         <div className={"app-container"}>
             {currentPage === 0 &&
@@ -52,6 +58,8 @@ function App() {
             }
             {currentPage === 2 &&
               <Challenge
+                  setCurrentPage={setCurrentPage}
+                  resetApp={resetApp}
                   setDisplayHeader={setDisplayHeader}
                   randomUsername={randomUsername}
               />
@@ -66,7 +74,7 @@ function App() {
               <div className='leave' >
                 <button className='leave__button' onClick={() => {
                   setDisplayHeader(true)
-                  setCurrentPage(0)
+                  resetApp()
                 }}>
                   Quitter le défi
                 </button>
