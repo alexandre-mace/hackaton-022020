@@ -1,9 +1,9 @@
 import React from 'react'
 
-const StartChallenge = ({setChallengeStep}) => {
+const StartChallenge = ({setChallengeStep, randomUsername}) => {
   return (
     <div>
-      <h1>Nokia 3310</h1>
+      <h1>{randomUsername}</h1>
       <p>Êtes-vous prêt(e) pour ce défi ?</p>
 
       <div>

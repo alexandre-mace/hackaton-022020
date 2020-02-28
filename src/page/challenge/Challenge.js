@@ -5,7 +5,7 @@ import FriendWaiting from './FriendWaiting'
 import StartChallenge from './StartChallenge'
 import Quiz from './Quiz'
 
-const Challenge = ({setDisplayHeader}) => {
+const Challenge = ({setDisplayHeader, randomUsername}) => {
   const [challengeStep, setChallengeStep] = useState(0)
 
   const onChallengeStart = (stepNumber) => {
@@ -39,13 +39,13 @@ const Challenge = ({setDisplayHeader}) => {
         <FriendLink setChallengeStep={setChallengeStep} />
       )}
       {challengeStep === 2 && (
-        <FriendWaiting setChallengeStep={setChallengeStep} />
+        <FriendWaiting setChallengeStep={setChallengeStep} randomUsername={randomUsername}/>
       )}
       {challengeStep === 3 && (
-        <StartChallenge setChallengeStep={setChallengeStep} />
+        <StartChallenge setChallengeStep={setChallengeStep} randomUsername={randomUsername}/>
       )}
       {challengeStep === 4 && (
-        <Quiz setChallengeStep={setChallengeStep} />
+        <Quiz setChallengeStep={setChallengeStep} randromUsername={randomUsername}/>
       )}
     </div>
   )
