@@ -11,8 +11,8 @@ const useStyles = makeStyles({
     listbox: {
     },
     option: {
-        marginTop: '20px',
         padding: "20px",
+        paddingTop: "0",
         paddingBottom: "0"
     },
     fullList: {
@@ -21,6 +21,8 @@ const useStyles = makeStyles({
     paper: {
         borderTopLeftRadius: "25px",
         borderTopRightRadius: "25px",
+        backgroundColor: "#303136",
+        color: "white",
         padding: "20px",
         paddingTop: "50px",
         minHeight: "80vh",
@@ -37,6 +39,7 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
     });
     const [displayAutocomplete, setDisplayAutocomplete] = React.useState(false);
     const [currentActionSelection, setCurrentActionSelection] = React.useState(null);
+    const [onBoarding, setOnBoarding] = React.useState(false);
 
     const toggleDrawer = (side, actionSelection, open) => async event => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -65,6 +68,10 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
             role="presentation"
         >
                 {displayAutocomplete &&
+                    <>
+                    <div className={"drawer-title"}>
+                        - Sélectionnez l'item {currentActionSelection === 'first' ? "1" : "2"} -
+                    </div>
                 <Autocomplete
                     id="combo-box-demo"
                     open={displayAutocomplete}
@@ -74,14 +81,14 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                     }}
                     options={data}
                     getOptionLabel={option => option.title}
-                    onInputChange={(event, value) => {
+                    onChange={(event, value) => {
                             if (currentActionSelection === "first") {
-                                setFirstOption(data.filter((singleData) => (singleData.title === value))[0]);
+                                setFirstOption(value);
                                 setDisplayAutocomplete(!displayAutocomplete);
                                 setState({ ["bottom"]: false });
                             }
                             if (currentActionSelection === "second") {
-                                setSecondOption(data.filter((singleData) => (singleData.title === value))[0]);
+                                setSecondOption(value);
                                 setDisplayAutocomplete(!displayAutocomplete);
                                 setState({ ["bottom"]: false });
                             }
@@ -89,9 +96,10 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                     }
                     style={{ width: 300 }}
                     renderInput={params => (
-                        <TextField {...params} label="Action à comparer" variant="outlined" fullWidth />
+                        <TextField {...params} label="Tapez les 3 premières lettres..." variant="outlined" fullWidth />
                     )}
                 />
+                </>
                 }
         </div>
     );
@@ -104,13 +112,13 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
             datasets: [
                 {
                     label: 'My First dataset',
-                    backgroundColor: firstOption.pollutionScore > secondOption.pollutionScore ? "#2ecc71" : "#e74c3c",
+                    backgroundColor: firstOption.pollutionScore > secondOption.pollutionScore ? "#4B4A4A" : "#D52E97",
                     borderWidth: 1,
                     data: [firstOption.pollutionScore * 10]
                 },
                 {
                     label: 'My First dataset',
-                    backgroundColor: secondOption.pollutionScore > firstOption.pollutionScore ? "#2ecc71" : "#e74c3c",
+                    backgroundColor: secondOption.pollutionScore > firstOption.pollutionScore ? "#4B4A4A" : "#D52E97",
                     borderWidth: 1,
                     data: [secondOption.pollutionScore * 10]
                 }
@@ -120,22 +128,50 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
 
     return (
         <>
+            <div className={onBoarding === true ? "onboarding translateX" : "onboarding"}>
+                <div className={"onboarding-cross"} onClick={() => setOnBoarding(true)}>
+                    X
+                </div>
+                <div className={"onboarding-title"}>
+                    Bienvenue sur EKO
+                </div>
+                <div className={"onboarding-text"}>
+                    Compare l'impact écologique de tes habitudes numériques.
+                </div>
+            </div>
             {!search &&
             <div className={"search-wrapper"}>
                 <div className={"d-flex flex-column mb-3 align-items-center"}>
                     <div className={"page-title"}>Qui est le moins pire ?</div>
-                    <div className={"select-button"} onClick={toggleDrawer('bottom', "first", true)}>
-                        {firstOption ? firstOption.title : "+ Sujet 1"}
+                    <div className={"page-description"}>
+                        Sélectionner les items que vous souhaitez comparer dans la liste disponible.
                     </div>
-                    <div className={"text-center mt-3 mb-3"}>vs</div>
+                    <div className={"select-button"} onClick={toggleDrawer('bottom', "first", true)}>
+                        {firstOption ? firstOption.title : "Séléctionner l'item 1"}
+                    </div>
+                    <div className={"text-center mt-3 mb-3"}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="46.8" height="36.6" viewBox="0 0 46.8 36.6">
+                            <defs>
+                                <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stopColor="#ff9300" stopOpacity="0.718"/>
+                                    <stop offset="1" stopColor="#ffce00"/>
+                                </linearGradient>
+                            </defs>
+                            <g id="vs" transform="translate(-148.2 -548.5)">
+                                <path id="Icon_metro-lightning2" data-name="Icon metro-lightning2" d="M14.139,27.3l3.315,3.315-3.315,9.946,9.946-9.946L20.769,27.3l3.315-9.946L14.139,27.3Z" transform="translate(153.225 537.831)" fill="url(#linear-gradient)"/>
+                                <text id="V" transform="translate(149 577.3)" fill="#fff" stroke="#fff" strokeWidth="0.8" fontSize="30" fontFamily="Raleway-Bold, Raleway" fontWeight="700"><tspan x="0" y="0">V</tspan></text>
+                                <text id="S" transform="translate(176 577)" fill="#fff" fontSize="30" fontFamily="Raleway-Bold, Raleway" fontWeight="700"><tspan x="0" y="0">S</tspan></text>
+                            </g>
+                        </svg>
+                    </div>
                     <div className={"select-button"} onClick={toggleDrawer('bottom', "second", true)}>
-                        {secondOption ? secondOption.title : "+ Sujet 2"}
+                        {secondOption ? secondOption.title : "Sélectionner l'item 2"}
                     </div>
                 </div>
-                <div className={"d-flex mt-auto justify-content-center"}>
-                    <div>
-                        <Button disabled={(!firstOption || !secondOption)} variant="contained" color="primary" onClick={() => setSearch(true)}>
-                            Lancer
+                <div className={"d-flex mt-auto justify-content-center w-100"}>
+                    <div className={"w-100"}>
+                        <Button className={"go-button"} disabled={(!firstOption || !secondOption)} variant="contained" color="primary" onClick={() => setSearch(true)}>
+                            Go !
                         </Button>
                     </div>
                 </div>
@@ -146,54 +182,70 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
             </div>
             }
             {search &&
-            <div className={"search-wrapper"}>
-                <div className={"d-flex flex-column mb-3 align-items-center"}>
-                    <div className={"page-title"}>Le moins pire est...</div>
-            <div className={"mt-3"}>
-                <div>
-                    {
-                        firstOption.pollutionScore > secondOption.pollutionScore
-                            ? secondOption.title
-                            : firstOption.title
-                    } est le moins pire
-                </div>
-                <div className={"d-flex justify-content-center"}>
-                    <div>
-                        <Bar
-                            data={barData}
-                            width={300}
-                            height={300}
-                            options={{
-                                legend: {
-                                    display: false
-                                },
-                                tooltips: {
-                                    enabled: false
-                                },
-                                scales: {
-                                    xAxes: [{
-                                        gridLines: {
-                                            display:false
-                                        },
-                                    }],
-                                    yAxes: [{
-                                        gridLines: {
-                                            display:false
-                                        },
-                                        ticks: {
-                                            beginAtZero: true,
-                                            min: 0,
-                                            display: false
+            <div className={"search-wrapper d-flex flex-column align-items-center h-100"}>
+                <div className={"page-title"}>Et le vainqueur est...</div>
+                    <div className={"d-flex justify-content-center"}>
+                        <div>
+                            <Bar
+                                data={barData}
+                                width={350}
+                                height={250}
+                                options={{
+                                    defaultFontColor: "#fff",
+                                    legend: {
+                                        display: false,
+                                        labels: {
+                                            fontColor: "white",
+                                            fontSize: 18
                                         }
-                                    }]
-                                }
-                            }}
-                        />
+                                    },
+                                    tooltips: {
+                                        enabled: false
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                display:false
+                                            },
+                                        }],
+                                        yAxes: [{
+                                            gridLines: {
+                                                display:false
+                                            },
+                                            ticks: {
+                                                beginAtZero: true,
+                                                min: 0,
+                                                display: false
+                                            }
+                                        }]
+                                    }
+                                }}
+                            />
+                        </div>
                     </div>
+                <div className={"d-flex justify-content-center"}>
+                    <div className={"result-action"}>{firstOption.title}</div>
+                    <div className={"result-action"}>{secondOption.title}</div>
+                </div>
+                <div className={"result-card"}>
+                    <div className={"result-card-title"}>{firstOption.title}</div>
+                    <div className={"result-card-text"}>{firstOption.text}blblblblbl</div>
+                </div>
+                <div className={"result-card"}>
+                    <div className={"result-card-title"}>{secondOption.title}</div>
+                    <div className={"result-card-text"}>{secondOption.text}blblblblbl</div>
+                </div>
+                <div>
+                    <div className={"result-helper"}>Et si il y avait mieux ?</div>
+                    <div className={"result-helper-content"}>
+                        <div className={"result-helper-title"}>Pour une meilleure alternative</div>
+                        <div className={"result-helper-text"}>On te conseille d'essayer Discord</div>
+                    </div>
+
                 </div>
                 <div className={"d-flex mt-auto justify-content-center"}>
-                    <div>
-                        <Button variant="contained" color="primary" onClick={() => {
+                    <div className={"w-100"}>
+                        <Button className={"go-button w-100 mt-3 mb-3"} variant="contained" color="primary" onClick={() => {
                             setSearch(false)
                             setFirstOption(null)
                             setSecondOption(null)
@@ -203,11 +255,9 @@ const SearchPage = ({ firstOption, setFirstOption, secondOption, setSecondOption
                     </div>
                 </div>
             </div>
-                </div>
-            </div>
 
             }
-            </>
+        </>
     )
 };
 export default SearchPage;
