@@ -59,10 +59,16 @@
   top: 0;
   border-radius: 10px;
 }
-
+.d-block {
+  display: block;
+}
 .info {
   display: flex;
   align-items: center;
+  margin-top: 30px;
+}
+.result-text {
+  font-size: 16px;
 }
 .info-content {
   background-color: white;

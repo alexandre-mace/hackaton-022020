@@ -13,7 +13,7 @@ const names = [
 ];
 
 function App() {
-    const [currentPage, setCurrentPage] = useState(2);
+    const [currentPage, setCurrentPage] = useState(0);
     const [displayHeader, setDisplayHeader] = useState(true)
     const [firstOption, setFirstOption] = useState(null);
     const [firstOptionSelection, setFirstOptionSelection] = useState(false);

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-const Question = ({question, setQuestionStep, questionCount, friendUsername}) => {
+const Question = ({question, setQuestionStep, questionCount, friendUsername, setGoodAnswers, goodAnswers}) => {
   const [selected, setSelected] = useState(null)
-  const [questionTimer, setQuestionTimer] = useState(10)
+  const [questionTimer, setQuestionTimer] = useState(5)
   const [showAnswerTimer, setShowAnswerTimer] = useState(6)
 
 
@@ -34,7 +34,7 @@ const Question = ({question, setQuestionStep, questionCount, friendUsername}) =>
       <p className='question-step'>Question {question.step + 1} / {questionCount} </p>
       <p className='question-title'>{question.text}</p>
       <div className='stepper'>
-        <span className='stepper-line' style={{width: (10-questionTimer)*10 + '%'}} />
+        <span className='stepper-line' style={{width: (5-questionTimer)*20 + '%'}} />
       </div>
       <div className='mt-3'>
         {question.answers.map((answer, index) => (
@@ -60,14 +60,21 @@ const Question = ({question, setQuestionStep, questionCount, friendUsername}) =>
                   : 'default-answer' 
               : 'default-answer'
             }
-             onClick={() => setSelected(answer.text)}>
+             onClick={() => {
+                if (answer.isTrue) {
+                  setGoodAnswers(goodAnswers + 1)
+                }
+               setSelected(answer.text)
+             }}>
             <p>{answer.text}</p>
           </button>
         ))}
       </div>
       {questionTimer === 0 && (
         <div className='info'>
-          <img width={86} height={72} src='../assets/images/logo.png' />
+          <div>
+            <img width={86} height={72} src='../assets/images/logo.png' />
+          </div>
           <div className='info-content'>
             {questionTimer === 0 && showAnswerTimer > 0 && <p className='answertimer'>{showAnswerTimer}</p>}
             <div className='info-bravo'>Bravo !</div>

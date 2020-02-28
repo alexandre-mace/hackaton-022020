@@ -54,7 +54,7 @@ const Challenge = ({setDisplayHeader, randomUsername, setCurrentPage}) => {
         <StartChallenge setChallengeStep={setChallengeStep} randomUsername={randomUsername}/>
       )}
       {challengeStep === 4 && (
-        <Quiz setChallengeStep={setChallengeStep} randromUsername={randomUsername}/>
+        <Quiz setDisplayHeader={setDisplayHeader} setChallengeStep={setChallengeStep} randomUsername={randomUsername}/>
       )}
     </div>
   )

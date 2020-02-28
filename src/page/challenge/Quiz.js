@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import questionData from '../../data/questionData'
 import Question from './Question'
+import Results from "./Results";
 
-const Quiz = () => {
+const Quiz = ({setChallengeStep, setDisplayHeader, randomUsername}) => {
   const [timer, setTimer] = useState(3)
-  const [questionStep, setQuestionStep] = useState(-1)
+  const [questionStep, setQuestionStep] = useState(0)
+  const [goodAnswers, setGoodAnswers] = useState(0)
 
 
   useEffect(() => {
@@ -31,10 +33,12 @@ const Quiz = () => {
       )}
       {timer <= 0 && questionStep >= 0 && questionData.map((question, index) => {
         if (question.step === questionStep) {
-          return <Question key={index} question={question} setQuestionStep={setQuestionStep} questionCount={questionData.length} />
+          return <Question goodAnswers={goodAnswers} setGoodAnswers={setGoodAnswers} key={index} question={question} setQuestionStep={setQuestionStep} questionCount={questionData.length} />
         }
-        return
       })}
+      {questionStep > (questionData.length - 1) &&
+        <Results goodAnswers={goodAnswers} setDisplayHeader={setDisplayHeader} randomUsername={randomUsername} setChallengeStep={setChallengeStep}/>
+      }
 
     </div>
   )

@@ -42,6 +42,7 @@
 .onboarding-cross {
   position: absolute;
   top: 20px;
+  font-size: 25px;
   right: 20px;
 }
 .justify-content-between {
@@ -275,6 +276,23 @@
 .container {
   padding: 20px;
 }
+.align-items-center {
+  align-items: center;
+}
+.m-auto {
+  margin: auto;
+}
+.result-number {
+  font-size: 45px;
+  font-weight: 500;
+  margin-right: 15px;
+}
+.result-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 30px;
+ }
 .categories-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -293,8 +311,15 @@
 .category-title {
   text-align: center;
 }
+.h-50 {
+  height: 50px;
+}
+.h-52 {
+  height: 52px;
+}
 .arrow-back {
   margin-bottom: 30px;
+  align-self: self-start;
 }
 .default-answer {
   position: relative;

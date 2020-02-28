@@ -129,7 +129,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
         <>
             <div className={onBoarding === true ? "onboarding translateX" : "onboarding"}>
                 <div className={"onboarding-cross"} onClick={() => setOnBoarding(true)}>
-                    X
+                    &#10005;
                 </div>
                 <div className={"onboarding-title"}>
                     Bienvenue sur EKO
@@ -189,7 +189,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                             <Bar
                                 data={barData}
                                 width={350}
-                                height={250}
+                                height={200}
                                 options={{
                                     defaultFontColor: "#fff",
                                     legend: {
@@ -239,7 +239,7 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                         <div>{secondOption.title}</div>
                     </div>
                 </div>
-                <div className={"result-card"}>
+                <div className={"result-card mt-8"}>
                     <div className={"result-card-title"}>
                         {secondOption.pollutionScore < firstOption.pollutionScore
                             ? <img className={"mr-1"} width={26} height={26} src={"../assets/images/ic_cup-color.png"} />
@@ -268,9 +268,9 @@ const SearchPage = ({ onBoarding, setOnBoarding, firstOption, setFirstOption, se
                     </div>
 
                 </div>
-                <div className={"d-flex mt-auto justify-content-center"}>
+                <div className={"d-flex mt-auto justify-content-center w-100"}>
                     <div className={"w-100"}>
-                        <Button className={"go-button w-100 mt-3 mb-3"} variant="contained" color="primary" onClick={() => {
+                        <Button className={"go-button w-100 mt-3"} variant="contained" color="primary" onClick={() => {
                             setSearch(false)
                             setFirstOption(null)
                             setSecondOption(null)
