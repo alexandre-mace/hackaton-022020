@@ -5,11 +5,13 @@
     "answers": [
       {
         "text": "La réponse 1",
-        "isTrue": false
+        "isTrue": false,
+        "hasFriendAnswered": false
       },
       {
         "text": "La réponse 2",
-        "isTrue": true
+        "isTrue": true,
+        "hasFriendAnswered": true
       }
     ]
   },
@@ -19,11 +21,13 @@
     "answers": [
       {
         "text": "La réponse 1",
-        "isTrue": false
+        "isTrue": false,
+        "hasFriendAnswered": true
       },
       {
         "text": "La réponse 2",
-        "isTrue": true
+        "isTrue": true,
+        "hasFriendAnswered": false
       }
     ]
   },
@@ -33,11 +37,13 @@
     "answers": [
       {
         "text": "La réponse 1",
-        "isTrue": false
+        "isTrue": false,
+        "hasFriendAnswered": true
       },
       {
         "text": "La réponse 2",
-        "isTrue": true
+        "isTrue": true,
+        "hasFriendAnswered": false
       }
     ]
   },
@@ -47,11 +53,13 @@
     "answers": [
       {
         "text": "La réponse 1",
-        "isTrue": false
+        "isTrue": false,
+        "hasFriendAnswered": false
       },
       {
         "text": "La réponse 2",
-        "isTrue": true
+        "isTrue": true,
+        "hasFriendAnswered": true
       }
     ]
   },
@@ -61,11 +69,13 @@
     "answers": [
       {
         "text": "La réponse 1",
-        "isTrue": false
+        "isTrue": false,
+        "hasFriendAnswered": true
       },
       {
         "text": "La réponse 2",
-        "isTrue": true
+        "isTrue": true,
+        "hasFriendAnswered": false
       }
     ]
   }

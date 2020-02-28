@@ -1,9 +1,9 @@
 import React from 'react'
 
-const StartChallenge = ({setChallengeStep, setCurrentPage, setDisplayHeader}) => {
+const StartChallenge = ({setChallengeStep, randomUsername}) => {
   return (
     <div className='ta-c'>
-      <div className='player__name'>Nokia 3310</div>
+      <div className='player__name'>{randomUsername}</div>
       <div className='friend__text'>Êtes-vous prêt(e) pour ce défi ?</div>
       <div className='circle'>
         <img width='132' height='111' src='../assets/images/logo.png' />

@@ -49,10 +49,14 @@ const Question = ({question, setQuestionStep, questionCount}) => {
           className={selected === answer.text 
             ? questionTimer === 0 
                 ? answer.isTrue 
-                    ? 'answer-selected answer-true'
-                    : 'answer-selected answer-false'
-                : 'answer-selected' 
-            : ''}
+                    ? answer.hasFriendAnswered
+                          ? 'default-answer answer-selected answer-true friend-answer'
+                          : 'default-answer answer-selected answer-true'
+                    : answer.hasFriendAnswered
+                          ? 'default-answer answer-selected answer-false friend-answer'
+                          : 'default-answer answer-selected answer-false'
+                : 'default-answer answer-selected'
+            : 'default-answer'}
              onClick={() => setSelected(answer.text)}>
             <p>{answer.text}</p>
           </button>
