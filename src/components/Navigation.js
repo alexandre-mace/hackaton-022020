@@ -7,12 +7,12 @@ const Navigation = ({ setCurrentPage, setSearch }) => {
                 setCurrentPage(0)
                 setSearch(false)
             }}>
-                <img width={46} height={39} src='./../assets/images/logo-colors.png'/>
+                <img width={46} height={39} src={"assets/images/logo-colors.png"}/>
                 <div className={"logo-name"}>EKO</div>
             </button>
             <div className={'nav-icons'}>
                 <div className={'nav-icon'} onClick={() => setCurrentPage(1)}>
-                    <img width={23} height={23} src={'./../assets/images/ic_cup.svg'} />
+                    <img width={23} height={23} src={'assets/images/ic_cup.svg'} />
                 </div>
                 <div className={'nav-icon'} onClick={() => setCurrentPage(2)}>
                     <img width={23} height={23} src={'./../assets/images/ic_fight.svg'} />
