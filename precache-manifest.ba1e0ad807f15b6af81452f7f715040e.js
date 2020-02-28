@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e93ae58a6371295c4f790260863e7140",
+    "revision": "8cc293cc1983de65d491336449eef36d",
     "url": "/hackaton-022020/index.html"
   },
   {
-    "revision": "7d8e07419711fc23403c",
+    "revision": "1f2c95d5c509c01f2e74",
     "url": "/hackaton-022020/static/css/main.d72cc4f9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hackaton-022020/static/js/2.4ba2b563.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d8e07419711fc23403c",
-    "url": "/hackaton-022020/static/js/main.6fb76927.chunk.js"
+    "revision": "1f2c95d5c509c01f2e74",
+    "url": "/hackaton-022020/static/js/main.bcf11623.chunk.js"
   },
   {
     "revision": "61da8938c9c297ad95d3",

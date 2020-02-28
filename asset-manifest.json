@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/hackaton-022020/static/css/main.d72cc4f9.chunk.css",
-    "main.js": "/hackaton-022020/static/js/main.6fb76927.chunk.js",
-    "main.js.map": "/hackaton-022020/static/js/main.6fb76927.chunk.js.map",
+    "main.js": "/hackaton-022020/static/js/main.bcf11623.chunk.js",
+    "main.js.map": "/hackaton-022020/static/js/main.bcf11623.chunk.js.map",
     "runtime-main.js": "/hackaton-022020/static/js/runtime-main.139218dd.js",
     "runtime-main.js.map": "/hackaton-022020/static/js/runtime-main.139218dd.js.map",
     "static/js/2.4ba2b563.chunk.js": "/hackaton-022020/static/js/2.4ba2b563.chunk.js",
     "static/js/2.4ba2b563.chunk.js.map": "/hackaton-022020/static/js/2.4ba2b563.chunk.js.map",
     "index.html": "/hackaton-022020/index.html",
-    "precache-manifest.cc9f9d1daab88b01e84337a6d577c08f.js": "/hackaton-022020/precache-manifest.cc9f9d1daab88b01e84337a6d577c08f.js",
+    "precache-manifest.ba1e0ad807f15b6af81452f7f715040e.js": "/hackaton-022020/precache-manifest.ba1e0ad807f15b6af81452f7f715040e.js",
     "service-worker.js": "/hackaton-022020/service-worker.js",
     "static/css/main.d72cc4f9.chunk.css.map": "/hackaton-022020/static/css/main.d72cc4f9.chunk.css.map",
     "static/js/2.4ba2b563.chunk.js.LICENSE.txt": "/hackaton-022020/static/js/2.4ba2b563.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.139218dd.js",
     "static/js/2.4ba2b563.chunk.js",
     "static/css/main.d72cc4f9.chunk.css",
-    "static/js/main.6fb76927.chunk.js"
+    "static/js/main.bcf11623.chunk.js"
   ]
 }
